@@ -16,3 +16,8 @@ LyngkTestCase.prototype.testHistoire3 = function () {
     var x = new Lyngk.Coordinates("A",3);
     assertTrue(x.toString() === "A3");
 }
+
+LyngkTestCase.prototype.testHistoire4 = function () {
+    var x = new Lyngk.Coordinates("A",1);
+    assertTrue(x.toString() === "invalid");
+}
