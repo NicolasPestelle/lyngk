@@ -17,5 +17,8 @@ Lyngk.Coordinates = function (c, l) {
         }
         return somme;
     }
-    
+
+    this.toString = function () {
+        return ""+c+l;
+    }
 };
