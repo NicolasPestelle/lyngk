@@ -17,4 +17,5 @@ Lyngk.Coordinates = function (c, l) {
         }
         return somme;
     }
+    
 };
