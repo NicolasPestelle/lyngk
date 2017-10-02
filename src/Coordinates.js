@@ -10,4 +10,11 @@ Lyngk.Coordinates = function (c, l) {
         return (coordValide[c.charCodeAt(0) - 'A'.charCodeAt(0)][0] < l && l < coordValide[c.charCodeAt(0) - 'A'.charCodeAt(0)][1]);
     };
 
+    this.nbTotalPositionValide = function () {
+        var somme = 0;
+        for(var i in coordValide){
+            somme += coordValide[i][1] - coordValide[i][0]+1;
+        }
+        return somme;
+    }
 };
