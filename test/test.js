@@ -58,3 +58,13 @@ LyngkTestCase.prototype.testHistoire9 = function () {
     x.placerPion(Lyngk.Color.RED);
     assertTrue(x.get_etat() === Lyngk.State.STACK && x.get_color() === Lyngk.Color.RED);
 }
+
+LyngkTestCase.prototype.testHistoire10 = function () {
+    var x = new Lyngk.Intersection();
+    x.placerPion(Lyngk.Color.BLUE);
+    x.placerPion(Lyngk.Color.RED);
+    x.placerPion(Lyngk.Color.BLACK);
+    x.placerPion(Lyngk.Color.GREEN);
+    x.placerPion(Lyngk.Color.IVORY);
+    assertTrue(x.get_etat() === Lyngk.State.FULL_STACK && x.get_color() === Lyngk.Color.IVORY);
+}
