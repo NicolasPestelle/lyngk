@@ -7,7 +7,7 @@ Lyngk.Coordinates = function (c, l) {
     var private_cl = l;
 
     this.est_Valide = function () {
-        return (coordValide[c.charCodeAt(0) - 'A'.charCodeAt(0)][0] < l && l < coordValide[c.charCodeAt(0) - 'A'.charCodeAt(0)][1]);
+        return (coordValide[c.charCodeAt(0) - 'A'.charCodeAt(0)][0] <= l && l <= coordValide[c.charCodeAt(0) - 'A'.charCodeAt(0)][1]);
     };
 
     this.nbTotalPositionValide = function () {
@@ -19,6 +19,11 @@ Lyngk.Coordinates = function (c, l) {
     }
 
     this.toString = function () {
-        return ""+c+l;
+
+        if(this.est_Valide()==false){
+            return "invalid";
+        }else {
+            return "" + c + l;
+        }
     }
 };
