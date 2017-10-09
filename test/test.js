@@ -55,6 +55,6 @@ LyngkTestCase.prototype.testHistoire8 = function () {
 LyngkTestCase.prototype.testHistoire9 = function () {
     var x = new Lyngk.Intersection();
     x.placerPion(Lyngk.Color.BLUE);
-    x.placerPion(Lyngk.Color.RED)
-    assertTrue(x.get_etat() == Lyngk.State.STACK && x.get_color() == Lyngk.Color.RED);
+    x.placerPion(Lyngk.Color.RED);
+    assertTrue(x.get_etat() === Lyngk.State.STACK && x.get_color() === Lyngk.Color.RED);
 }
