@@ -28,7 +28,23 @@ Lyngk.Coordinates = function (c, l) {
     }
 
     this.clone = function () {
-        return new Lyngk.Coordinates(this.c,this.l);
+        return new Lyngk.Coordinates(private_c,private_cl);
+    }
+
+    this.get_c = function () {
+        return private_c;
+    }
+
+    this.get_cl = function () {
+        return private_cl;
+    }
+
+    this.equals = function (coord) {
+        if (private_c === coord.get_c() && private_cl === coord.get_cl()){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     };

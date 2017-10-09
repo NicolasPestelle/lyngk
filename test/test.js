@@ -28,3 +28,9 @@ LyngkTestCase.prototype.testHistoire5 = function () {
     var y = x.clone();//clone de x
     assertTrue(x.equals(y));
 }
+
+LyngkTestCase.prototype.testEquals = function () {
+    var x = new Lyngk.Coordinates("A",1);
+    var y = new Lyngk.Coordinates("A",1);//clone de x
+    assertTrue(x.equals(y) == true);
+}
