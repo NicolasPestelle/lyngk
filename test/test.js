@@ -68,3 +68,14 @@ LyngkTestCase.prototype.testHistoire10 = function () {
     x.placerPion(Lyngk.Color.IVORY);
     assertTrue(x.get_etat() === Lyngk.State.FULL_STACK && x.get_color() === Lyngk.Color.IVORY);
 }
+
+LyngkTestCase.prototype.testHistoire11 = function () {
+    var x = new Lyngk.Engine();
+    var onePiece = true;
+    for(var i in plateau){
+        if(plateau[i].get_etat() != Lyngk.State.ONE_PIECE){
+            onePiece = false;
+        }
+    }
+    assertTrue(onePiece);
+}
