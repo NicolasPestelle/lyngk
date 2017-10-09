@@ -45,4 +45,3 @@ LyngkTestCase.prototype.testHistoire7 = function () {
     var x = new Lyngk.Intersection();
     assertTrue(x.get_etat() == Lyngk.State.VACANT);
 }
-
