@@ -32,16 +32,22 @@ LyngkTestCase.prototype.testHistoire5 = function () {
 LyngkTestCase.prototype.testEquals = function () {
     var x = new Lyngk.Coordinates("A",1);
     var y = new Lyngk.Coordinates("A",1);//clone de x
-    assertTrue(x.equals(y) == true);
+    assertTrue(x.equals(y) === true);
 }
 
 LyngkTestCase.prototype.testHistoire6 = function () {
     var x = new Lyngk.Coordinates("C",3);
     var tHash = x.hash();
-    assertTrue(tHash == 33);
+    assertTrue(tHash === 33);
 }
 
 LyngkTestCase.prototype.testHistoire7 = function () {
     var x = new Lyngk.Intersection();
-    assertTrue(x.get_etat() == Lyngk.State.VACANT);
+    assertTrue(x.get_etat() === Lyngk.State.VACANT);
+}
+
+LyngkTestCase.prototype.testHistoire8 = function () {
+    var x = new Lyngk.Intersection();
+    x.placerPion(Lyngk.Color.BLUE)
+    assertTrue(x.get_etat() == Lyngk.State.ONE_PIECE && x.get_color() == Lyngk.Color.BLUE);
 }
