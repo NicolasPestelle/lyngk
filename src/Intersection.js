@@ -9,6 +9,7 @@ Lyngk.Intersection = function (c) {
 Lyngk.Intersection = function () {
     var private_etat = Lyngk.State.VACANT;
     var private_color;
+    var private_nbPion = 0;
 
     this.get_etat = function () {
         return private_etat;
@@ -20,11 +21,15 @@ Lyngk.Intersection = function () {
 
     this.placerPion = function (color) {
          private_color = color;
-
-        if (private_etat === Lyngk.State.VACANT ){
-            private_etat = Lyngk.State.ONE_PIECE;
-        } else if(private_etat === Lyngk.State.ONE_PIECE){
-            private_etat = Lyngk.State.STACK;
-        }
+         private_nbPion ++;
+         if(private_nbPion == 5 ){
+             private_etat = Lyngk.State.FULL_STACK;
+         }else {
+             if (private_etat === Lyngk.State.VACANT) {
+                 private_etat = Lyngk.State.ONE_PIECE;
+             } else if (private_etat === Lyngk.State.ONE_PIECE) {
+                 private_etat = Lyngk.State.STACK;
+             }
+         }
     }
 };
