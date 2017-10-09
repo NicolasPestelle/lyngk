@@ -19,10 +19,13 @@ Lyngk.Intersection = function () {
     }
 
     this.placerPion = function (color) {
-        var color = color;
-        if (color == Lyngk.Color.BLUE ){
-            private_color = Lyngk.Color.BLUE;
+         private_color = color;
+        if (private_etat === Lyngk.State.VACANT ){
             private_etat = Lyngk.State.ONE_PIECE;
         }
+
+       /* if(private_etat === Lyngk.State.ONE_PIECE){
+            private_etat = Lyngk.State.STACK
+        }*/
     }
 };
