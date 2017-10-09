@@ -36,8 +36,8 @@ LyngkTestCase.prototype.testEquals = function () {
 }
 
 LyngkTestCase.prototype.testHistoire6 = function () {
-    var x = new Lyngk.Coordinates("A",3);
+    var x = new Lyngk.Coordinates("C",3);
     var tHash = x.hash();
-    assertTrue(tHash == 13);
+    assertTrue(tHash == 33);
 }
 
