@@ -6,7 +6,7 @@ Lyngk.Intersection = function (coord) {
     var private_etat = Lyngk.State.VACANT;
     var private_color;
     var private_nbPion = 0;
-
+    var private_coord = coord;
 
     this.get_etat = function () {
         return private_etat;
