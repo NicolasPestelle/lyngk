@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f506860d-029c-4c7b-b0ed-d6abeea88d1b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test.js" afterPath="$PROJECT_DIR$/test/test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Intersection.js" afterPath="$PROJECT_DIR$/src/Intersection.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,11 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Intersection.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Intersection.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Intersection.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+            <state relative-caret-position="476">
+              <caret line="28" column="51" lean-forward="false" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -48,7 +47,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/test.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="548">
@@ -113,8 +112,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/Engine.js" />
         <option value="$PROJECT_DIR$/src/Coordinates.js" />
-        <option value="$PROJECT_DIR$/src/Intersection.js" />
         <option value="$PROJECT_DIR$/test/test.js" />
+        <option value="$PROJECT_DIR$/src/Intersection.js" />
       </list>
     </option>
   </component>
@@ -323,20 +322,11 @@
       <workItem from="1506930882517" duration="7131000" />
       <workItem from="1507532718999" duration="373000" />
       <workItem from="1507533119158" duration="10117000" />
-      <workItem from="1508137162239" duration="4492000" />
+      <workItem from="1508137162239" duration="4750000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Tests - 2017.10.16 at 09h 15m 19s.xml">
-      <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
-    </history-entry>
-    <history-entry file="Tests - 2017.10.16 at 09h 15m 42s.xml">
-      <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
-    </history-entry>
-    <history-entry file="Tests - 2017.10.16 at 09h 17m 11s.xml">
-      <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
-    </history-entry>
     <history-entry file="Tests - 2017.10.16 at 09h 20m 44s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
@@ -358,9 +348,18 @@
     <history-entry file="Tests - 2017.10.16 at 10h 14m 11s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
+    <history-entry file="Tests - 2017.10.16 at 10h 16m 40s.xml">
+      <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
+    </history-entry>
+    <history-entry file="Tests - 2017.10.16 at 10h 16m 47s.xml">
+      <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
+    </history-entry>
+    <history-entry file="Tests - 2017.10.16 at 10h 18m 16s.xml">
+      <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38965000" />
+    <option name="totallyTimeSpent" value="39223000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="31" width="1922" height="1004" extended-state="6" />
@@ -545,18 +544,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/test.js">
+    <entry file="file://$PROJECT_DIR$/src/Intersection.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="95" column="77" lean-forward="false" selection-start-line="95" selection-start-column="77" selection-end-line="95" selection-end-column="77" />
+        <state relative-caret-position="476">
+          <caret line="28" column="51" lean-forward="false" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Intersection.js">
+    <entry file="file://$PROJECT_DIR$/test/test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        <state relative-caret-position="548">
+          <caret line="95" column="77" lean-forward="false" selection-start-line="95" selection-start-column="77" selection-end-line="95" selection-end-column="77" />
           <folding />
         </state>
       </provider>
