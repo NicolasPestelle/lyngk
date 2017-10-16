@@ -18,15 +18,15 @@ Lyngk.Engine = function () {
                     tmp++;
                 }
             }
-    }
+    };
     this.getTaille = function()
     {
         return plateau.length;
-    }
+    };
     var initPlateau = function () {
         for(var i in tabCoordValid)
             plateau.push(new Lyngk.Intersection(tabCoordValid[i]));
-    }
+    };
     var remplirPlateau = function()
     {
 // for(var i in plateau)
@@ -41,10 +41,30 @@ Lyngk.Engine = function () {
             plateau[i].placerPion(couleur);
             cptCouleur[couleur]--;
         }
-    }
+    };
     this.getCase = function(i) {
         return plateau[i];
-    }
+    };
+
+    this.getCaseCoord = function (coord) {
+
+
+        for(var i in plateau){
+            if (plateau[i].get_coord().toString() === coord)
+                return plateau[i];
+        }
+
+    };
+    
+    this.deplacerPion = function (coord1,coord2) {
+        var src = this.getCaseCoord(coord1);
+        var dest = this.getCaseCoord(coord2);
+
+        var tmp = src.lastElementPile();
+        src.popPile();
+       // this.getCaseCoord(coord2).pushPile(tmp);
+    };
+
     good_coord();
     initPlateau();
     remplirPlateau();

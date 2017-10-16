@@ -89,18 +89,18 @@ LyngkTestCase.prototype.testHistoireTreize = function () {
 
     assertTrue(flag);
 
-}
+};
 LyngkTestCase.prototype.testHistoireQuatorze= function () {
     var jeu = new Lyngk.Engine();
 
     assertTrue(jeu.getCase(0).get_color_pile() === jeu.getCase(0).get_color() );
 
-}
+};
 LyngkTestCase.prototype.testHistoireQuinze= function () {
     var jeu = new Lyngk.Engine();
-    var couleur = jeu.getCase(0).get_color();
-    jeu.getCase(0).deplacerPion(1);
+    var couleur = jeu.getCaseCoord("A3").get_color();
+    jeu.deplacerPion("A3","B3");
 
-    assertTrue(jeu.getCase(0).get_color_pile() === Lyngk.State.VACANT && jeu.getCase(1).get_color() === couleur );
+    assertTrue(jeu.getCaseCoord("A3").get_color_pile() === Lyngk.State.VACANT && jeu.getCaseCoord("B3").get_color() === couleur );
 
-}
+};
