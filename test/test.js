@@ -78,3 +78,15 @@ LyngkTestCase.prototype.testHistoireDouze = function(){
     }
     assertTrue(flag);
 };
+
+LyngkTestCase.prototype.testHistoireTreize = function () {
+    var jeu = new Lyngk.Engine();
+    var flag = true;
+    for (var i = 0 ; i < jeu.getTaille(); i++){
+        if(jeu.getCase(i).get_taille_pile() !==1)
+            flag = false;
+    }
+
+    assertTrue(flag);
+
+}
