@@ -90,3 +90,9 @@ LyngkTestCase.prototype.testHistoireTreize = function () {
     assertTrue(flag);
 
 }
+LyngkTestCase.prototype.testHistoireQuatorze= function () {
+    var jeu = new Lyngk.Engine();
+
+    assertTrue(jeu.getCase(0).get_color_pile() === jeu.getCase(0).get_color() );
+
+}
