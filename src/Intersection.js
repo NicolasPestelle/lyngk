@@ -13,6 +13,10 @@ Lyngk.Intersection = function (coord) {
     {
         return private_color;
     }
+
+    this.get_taille_pile = function(){
+        return private_nbPions;
+    }
     this.placerPion = function(couleur)
     {
         private_color = couleur;
