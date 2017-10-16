@@ -1,81 +1,80 @@
 "use strict";
-
 var LyngkTestCase = TestCase("LyngkTestCase");
-
-LyngkTestCase.prototype.testHistoire1 = function () {
-    var x = new Lyngk.Coordinates("A",1);
-    assertTrue(x.est_Valide() == false);
+LyngkTestCase.prototype.testHistoireUn = function(){
+    var coord = new Lyngk.Coordinates("A", 3);
+    assertTrue(coord.valide() === true);
 };
-
-//ne pas oublier de verif au fur et a mesure que les coord sont valide !
-LyngkTestCase.prototype.testHistoire2 = function () {
-  var x = new Lyngk.Coordinates("A",1);
-  assertTrue(x.nbTotalPositionValide() == 43);
+LyngkTestCase.prototype.testHistoireDeux = function(){
+    var coord = new Lyngk.Coordinates("A", 1);
+    var somme = coord.sommeCoord();
+    assertTrue(somme === 43);
 };
-
-LyngkTestCase.prototype.testHistoire3 = function () {
-    var x = new Lyngk.Coordinates("A",3);
-    assertTrue(x.toString() === "A3");
-}
-
-LyngkTestCase.prototype.testHistoire4 = function () {
-    var x = new Lyngk.Coordinates("A",1);
-    assertTrue(x.toString() === "invalid");
-}
-
-LyngkTestCase.prototype.testHistoire5 = function () {
-    var x = new Lyngk.Coordinates("A",1);
-    var y = x.clone();//clone de x
-    assertTrue(x.equals(y));
-}
-
-LyngkTestCase.prototype.testEquals = function () {
-    var x = new Lyngk.Coordinates("A",1);
-    var y = new Lyngk.Coordinates("A",1);//clone de x
-    assertTrue(x.equals(y) === true);
-}
-
-LyngkTestCase.prototype.testHistoire6 = function () {
-    var x = new Lyngk.Coordinates("C",3);
-    var tHash = x.hash();
-    assertTrue(tHash === 33);
-}
-
-LyngkTestCase.prototype.testHistoire7 = function () {
-    var x = new Lyngk.Intersection();
-    assertTrue(x.get_etat() === Lyngk.State.VACANT);
-}
-
-LyngkTestCase.prototype.testHistoire8 = function () {
-    var x = new Lyngk.Intersection();
-    x.placerPion(Lyngk.Color.BLUE);
-    assertTrue(x.get_etat() == Lyngk.State.ONE_PIECE && x.get_color() == Lyngk.Color.BLUE);
-}
-
-LyngkTestCase.prototype.testHistoire9 = function () {
-    var x = new Lyngk.Intersection();
-    x.placerPion(Lyngk.Color.BLUE);
-    x.placerPion(Lyngk.Color.RED);
-    assertTrue(x.get_etat() === Lyngk.State.STACK && x.get_color() === Lyngk.Color.RED);
-}
-
-LyngkTestCase.prototype.testHistoire10 = function () {
-    var x = new Lyngk.Intersection();
-    x.placerPion(Lyngk.Color.BLUE);
-    x.placerPion(Lyngk.Color.RED);
-    x.placerPion(Lyngk.Color.BLACK);
-    x.placerPion(Lyngk.Color.GREEN);
-    x.placerPion(Lyngk.Color.IVORY);
-    assertTrue(x.get_etat() === Lyngk.State.FULL_STACK && x.get_color() === Lyngk.Color.IVORY);
-}
-
-LyngkTestCase.prototype.testHistoire11 = function () {
-    var x = new Lyngk.Engine();
-    var onePiece = true;
-    for(var i in plateau){
-        if(plateau[i].get_etat() != Lyngk.State.ONE_PIECE){
-            onePiece = false;
-        }
+LyngkTestCase.prototype.testHistoireTrois = function(){
+    var coord = new Lyngk.Coordinates("B", 2);
+    assertTrue(coord.toString() === "B2");
+};
+LyngkTestCase.prototype.testHistoireQuatre = function(){
+    var coord = new Lyngk.Coordinates("A", 1);
+    assertTrue(coord.toString() === "invalid");
+};
+LyngkTestCase.prototype.testHistoireCinq = function(){
+    var coord = new Lyngk.Coordinates("C", 3);
+    var coord2 = coord.clonage();
+    assertTrue(coord.comparaison(coord2) === true);
+};
+LyngkTestCase.prototype.testHistoireSix = function(){
+    var coord = new Lyngk.Coordinates("C", 4);
+    var testHash = coord.hash();
+    assertTrue(testHash === 34 );
+};
+LyngkTestCase.prototype.testHistoireSept = function(){
+    var inter = new Lyngk.Intersection();
+    assertTrue(inter.get_etat() === Lyngk.State.VACANT);
+};
+LyngkTestCase.prototype.testHistoireHuit = function(){
+    var inter = new Lyngk.Intersection();
+    inter.placerPion(Lyngk.Color.BLUE);
+    assertTrue(inter.get_color() === Lyngk.Color.BLUE && inter.get_etat() === Lyngk.State.ONE_PIECE);
+};
+LyngkTestCase.prototype.testHistoireNeuf = function(){
+    var inter = new Lyngk.Intersection();
+    inter.placerPion(Lyngk.Color.BLUE);
+    inter.placerPion(Lyngk.Color.RED);
+    assertTrue(inter.get_color() === Lyngk.Color.RED && inter.get_etat() === Lyngk.State.STACK);
+};
+LyngkTestCase.prototype.testHistoireDix = function(){
+    var inter = new Lyngk.Intersection();
+    inter.placerPion(Lyngk.Color.BLUE);
+    inter.placerPion(Lyngk.Color.RED);
+    inter.placerPion(Lyngk.Color.IVORY);
+    inter.placerPion(Lyngk.Color.BLACK);
+    inter.placerPion(Lyngk.Color.GREEN);
+    assertTrue(inter.get_color() === Lyngk.Color.GREEN && inter.get_etat() === Lyngk.State.FULL_STACK);
+};
+LyngkTestCase.prototype.testHistoireOnze = function(){
+    var jeu = new Lyngk.Engine();
+    var flag = false;
+    if(jeu.getCase(0).get_etat() === Lyngk.State.ONE_PIECE)
+        flag = true;
+    for(var i = 0 ; i < jeu.getTaille(); i++)
+    {
+        if(jeu.getCase(i).get_etat() !== Lyngk.State.ONE_PIECE)
+            flag = false;
     }
-    assertTrue(onePiece);
-}
+    assertTrue(flag);
+};
+LyngkTestCase.prototype.testHistoireDouze = function(){
+    var jeu = new Lyngk.Engine();
+    var flag = true;
+    var cptCouleur = [0,0,0,0,0,0];
+    var couleurAttendue = [8,8,8,8,8,3];
+    for(var i = 0 ; i < jeu.getTaille(); i++)
+        cptCouleur[jeu.getCase(i).get_color()]++;
+// console.log(jeu.getCase(i).get_color());
+    for(var j in cptCouleur)
+    {
+        if(cptCouleur[j] !== couleurAttendue[j])
+            flag = false;
+    }
+    assertTrue(flag);
+};
