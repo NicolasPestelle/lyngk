@@ -98,8 +98,9 @@ LyngkTestCase.prototype.testHistoireQuatorze= function () {
 }
 LyngkTestCase.prototype.testHistoireQuinze= function () {
     var jeu = new Lyngk.Engine();
+    var couleur = jeu.getCase(0).get_color();
     jeu.getCase(0).deplacerPion(i);
 
-    assertTrue(jeu.getCase(0).get_color_pile() === jeu.getCase(0).get_color() );
+    assertTrue(jeu.getCase(0).get_color_pile() === Lyngk.State.VACANT && jeu.getCase(1).get_color() === couleur );
 
 }
