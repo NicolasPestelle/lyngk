@@ -101,3 +101,11 @@ LyngkTestCase.prototype.testHistoireQuinze = function(){
     jeu.deplacer_pion("A3","B3");
     assertTrue(jeu.get_case_coord("A3").get_etat() === Lyngk.State.VACANT &&  jeu.get_case_coord("B3").get_color() === couleur);
 };
+
+LyngkTestCase.prototype.testHistoireSeize = function () {
+    var jeu = new Lyngk.Engine();
+    jeu.deplacer_pion("A3","B3");
+    jeu.deplacer_pion("B3","B2");
+    var couleur = jeu.get_case_coord("B3").get_color();
+    assertTrue(jeu.get_case_coord("B3").get_etat() === Lyngk.State.VACANT &&  jeu.get_case_coord("B2").get_color() === couleur && jeu.get_case_coord("B2").get_taille_pile() === 3);
+};
