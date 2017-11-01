@@ -90,17 +90,14 @@ LyngkTestCase.prototype.testHistoireTreize = function () {
     assertTrue(flag);
 
 };
-LyngkTestCase.prototype.testHistoireQuatorze= function () {
+LyngkTestCase.prototype.testHistoireQuatorze = function(){
     var jeu = new Lyngk.Engine();
-
-    assertTrue(jeu.getCase(0).get_color_pile() === jeu.getCase(0).get_color() );
-
+    assertTrue(jeu.getCase(0).get_couleur_pile() === jeu.getCase(0).get_color());
 };
-LyngkTestCase.prototype.testHistoireQuinze= function () {
+
+LyngkTestCase.prototype.testHistoireQuinze = function(){
     var jeu = new Lyngk.Engine();
-    var couleur = jeu.getCaseCoord("A3").get_color();
-    jeu.deplacerPion("A3","B3");
-
-    assertTrue(jeu.getCaseCoord("A3").get_color_pile() === Lyngk.State.VACANT && jeu.getCaseCoord("B3").get_color() === couleur );
-
+    var couleur = jeu.get_case_coord("A3").get_color();
+    jeu.deplacer_pion("A3","B3");
+    assertTrue(jeu.get_case_coord("A3").get_etat() === Lyngk.State.VACANT &&  jeu.get_case_coord("B3").get_color() === couleur);
 };
