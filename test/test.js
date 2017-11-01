@@ -1,5 +1,6 @@
 "use strict";
 var LyngkTestCase = TestCase("LyngkTestCase");
+
 LyngkTestCase.prototype.testHistoireUn = function(){
     var coord = new Lyngk.Coordinates("A", 3);
     assertTrue(coord.valide() === true);
@@ -72,10 +73,8 @@ LyngkTestCase.prototype.testHistoireDouze = function(){
         cptCouleur[jeu.getCase(i).get_color()]++;
 // console.log(jeu.getCase(i).get_color());
     for(var j in cptCouleur)
-    {
-        if(cptCouleur[j] !== couleurAttendue[j])
-            flag = false;
-    }
+        if (cptCouleur[j] !== couleurAttendue[j]) flag = false;
+
     assertTrue(flag);
 };
 

@@ -7,7 +7,6 @@ Lyngk.Engine = function () {
 
 
     var plateau = [];
-    var j = 0;
     var tabCoordValid = [];
 
     var good_coord = function () {
@@ -32,13 +31,13 @@ Lyngk.Engine = function () {
             }
 
 
-    }
+    };
 
 
     this.getTaille = function()
     {
         return plateau.length;
-    }
+    };
 
     var initPlateau = function () {
         for(var i in tabCoordValid)
@@ -48,7 +47,7 @@ Lyngk.Engine = function () {
         }
 
 
-    }
+    };
 
     var remplirPlateau = function()
     {
@@ -68,7 +67,7 @@ Lyngk.Engine = function () {
         }
 
 
-    }
+    };
 
     this.get_case_coord = function(c) // Refondre avec le hashcode (hashcode = indice tab) refaire le hashcode
     {
@@ -77,7 +76,7 @@ Lyngk.Engine = function () {
             if(plateau[i].get_coord().toString() === c)
                 return plateau[i];
         }
-    }
+    };
 
     this.deplacer_pion = function(src, dest)
     {
@@ -88,11 +87,11 @@ Lyngk.Engine = function () {
         destination.placerPion(tmp);
 
 
-    }
+    };
 
     this.getCase = function(i) {
         return plateau[i];
-    }
+    };
 
     good_coord();
     initPlateau();

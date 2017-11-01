@@ -27,11 +27,10 @@ Lyngk.Coordinates = function (c, l) {
         var somme = 0;
 
         for(var i in Lyngk.CoordValides)
-        {
             somme += Lyngk.CoordValides[i][1] - Lyngk.CoordValides[i][0] + 1;
-        }
+
         return somme;
-    }
+    };
 
     this.toString = function()
     {
@@ -39,32 +38,29 @@ Lyngk.Coordinates = function (c, l) {
             return "invalid";
         else return ""+ c + l;
 
-    }
+    };
 
     this.clonage = function()
     {
 
         return new Lyngk.Coordinates(private_c, private_l);
-    }
+    };
 
     this.comparaison = function(coord) {
 
-        if(private_c === coord.get_c() && private_l === coord.get_l())
-            return true;
-        else return false;
-    }
+        return private_c === coord.get_c() && private_l === coord.get_l();
+    };
 
     this.get_c = function() {
         return private_c;
-    }
+    };
 
     this.get_l = function() {
         return private_l;
-    }
+    };
 
     this.hash = function()
     {
-        var hashage = parseInt("" + (private_c.charCodeAt(0)-64) + private_l) ;
-        return hashage;
+        return parseInt("" + (private_c.charCodeAt(0) - 64) + private_l);
     }
 };

@@ -16,45 +16,45 @@ Lyngk.Intersection = function (coord) {
         if(private_nbPions === 0)
             private_etat = Lyngk.State.VACANT;
 
-    }
+    };
 
 
     this.get_pile= function(i)
     {
         return private_pile[i];
-    }
+    };
 
     this.get_coord = function()
     {
         return private_coord;
-    }
+    };
 
     this.get_couleur_pile = function()
     {
         return private_pile[private_nbPions-1];
-    }
+    };
 
     this.get_taille_pile = function()
     {
         return private_nbPions;
-    }
+    };
 
     this.get_etat = function()
     {
         return private_etat;
-    }
+    };
 
     this.get_color = function()
     {
         return private_color;
-    }
+    };
 
     this.placerPion = function(couleur)
     {
         private_pile.push(couleur);
         private_color = couleur;
-        private_nbPions++;
-        if(private_nbPions == 5)
+        private_nbPions ++;
+        if(private_nbPions === 5)
             private_etat = Lyngk.State.FULL_STACK;
         else if(private_etat === Lyngk.State.VACANT)
             private_etat = Lyngk.State.ONE_PIECE;
