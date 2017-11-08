@@ -69,12 +69,46 @@ Lyngk.Engine = function () {
 
     };
 
+
     this.get_case_coord = function(c) // Refaire avec le hashcode (hashcode = indice tab) refaire le hashcode ??
     {
         for(var i in plateau)
         {
             if(plateau[i].get_coord().toString() === c)
                 return plateau[i];
+        }
+    };
+
+
+    this.est_adjacent = function (src, dest) {
+
+        var source = this.get_case_coord(src);
+
+        var destination = this.get_case_coord(dest);
+
+        var colDest = destination.get_coord().get_c().charCodeAt(0);
+        var colSrc = source.get_coord().get_c().charCodeAt(0);
+
+
+        if (colSrc === colDest){
+            if( destination.get_coord().get_l()+1 === source.get_coord().get_l() ||  destination.get_coord().get_l()-1 === source.get_coord().get_l()){
+                return true;
+            }else {
+                return false;
+            }
+        }
+        else if (colDest === colSrc+1 ){
+            if(  destination.get_coord().get_l() === source.get_coord().get_l()+1 || destination.get_coord().get_l() === source.get_coord().get_l()){
+                return true;
+            }else {
+                return false;
+            }
+        }else if(colDest === colSrc-1){
+            if(destination.get_coord().get_l() === source.get_coord().get_l()-1 || destination.get_coord().get_l() === source.get_coord().get_l() ){
+                return true;
+            }else {
+                return false;
+            }
         }
     };
 
@@ -86,7 +120,7 @@ Lyngk.Engine = function () {
 
         var tmp = source.get_full_pile();
 
-        if (destination.get_taille_pile() != 0) {
+        if (destination.get_taille_pile() != 0 && this.est_adjacent(src,dest) === true) {
 
             for (var i in tmp) {
                 destination.placerPion(tmp[i]);

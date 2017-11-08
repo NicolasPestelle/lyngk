@@ -120,15 +120,11 @@ LyngkTestCase.prototype.testHistoireDixSept = function () {
 
 LyngkTestCase.prototype.testHistoireDixHuit = function () {
     var jeu = new Lyngk.Engine();
-    jeu.deplacer_pion("B2","B3");
-
-    var couleur1 = jeu.get_case_coord("C2").get_color();
-    var taille1 = jeu.get_case_coord("C2").get_taille_pile();
-
-    jeu.deplacer_pion("B3","C2");
-
-    var couleur = jeu.get_case_coord("B3").get_color();
-    var taille = jeu.get_case_coord("B3").get_taille_pile();
-
-    assertTrue(jeu.get_case_coord("B3").get_color() === couleur && jeu.get_case_coord("B3").get_taille_pile() === taille &&  jeu.get_case_coord("C2").get_color() === couleur1 && jeu.get_case_coord("C2").get_taille_pile() === taille1);
+     jeu.deplacer_pion("B2","B3");
+     var couleurC2 = jeu.get_case_coord("C2").get_color();
+     var tailleC2 = jeu.get_case_coord("C2").get_taille_pile();
+     var couleurB3 = jeu.get_case_coord("B3").get_color();
+     var tailleB3 = jeu.get_case_coord("B3").get_taille_pile();
+     jeu.deplacer_pion("B3","C2");
+     assertTrue(jeu.get_case_coord("B3").get_color() === couleurB3 && jeu.get_case_coord("C2").get_color() === couleurC2 && jeu.get_case_coord("B3").get_taille_pile() === tailleB3 && jeu.get_case_coord("C2").get_taille_pile() === tailleC2);
 };
