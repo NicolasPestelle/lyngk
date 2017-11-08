@@ -190,9 +190,7 @@ LyngkTestCase.prototype.testHistoireVingtDeux = function () {
     var tailleG6 = jeu.get_case_coord("G6").get_taille_pile();
     var couleurG6 = jeu.get_case_coord("G6").get_color();
 
+    jeu.deplacer_pion("H6","G6");
 
-    jeu.deplacer_pion("G6","H6");
-
-
-    assertTrue(jeu.get_case_coord("G6").get_color() === couleurG6 && jeu.get_case_coord("G6").get_color() === couleurG6 && jeu.get_case_coord("H6").get_taille_pile() === tailleH6 && jeu.get_case_coord("H6").get_taille_pile() === tailleH6);
+    assertTrue(jeu.get_case_coord("H6").get_color() === couleurH6 && jeu.get_case_coord("G6").get_color() === couleurG6 && jeu.get_case_coord("H6").get_taille_pile() === tailleH6 && jeu.get_case_coord("G6").get_taille_pile() === tailleG6);
 };

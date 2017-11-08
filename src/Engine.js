@@ -118,12 +118,12 @@ Lyngk.Engine = function () {
 
         var destination = this.get_case_coord(dest);
 
-        if(source.get_taille_pile() === 1 && destination.get_taille_pile() >1 ){
+        if(source.get_taille_pile() < destination.get_taille_pile()){
             return false;
         }
 
 
-            if(source.get_taille_pile()+destination.get_taille_pile() <= 5){
+        if(source.get_taille_pile()+destination.get_taille_pile() <= 5){
             return true;
         }else{
             return false;
