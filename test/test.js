@@ -158,3 +158,20 @@ LyngkTestCase.prototype.testHistoireVingt = function () {
 
     assertTrue(jeu.get_case_coord("D2").get_color() === couleurD2 && jeu.get_case_coord("D2").get_color() === couleurD2 && jeu.get_case_coord("E2").get_taille_pile() === tailleE2 && jeu.get_case_coord("E2").get_taille_pile() === tailleE2);
 };
+
+LyngkTestCase.prototype.testHistoireVingtEtUn = function () {
+    var jeu = new Lyngk.Engine();
+
+    jeu.deplacer_pion("A3","B3");
+
+    var tailleB3 = jeu.get_case_coord("B3").get_taille_pile();
+    var couleurB3 = jeu.get_case_coord("B3").get_color();
+
+    var tailleC3 = jeu.get_case_coord("C3").get_taille_pile();
+    var couleurC3 = jeu.get_case_coord("C3").get_color();
+
+    jeu.deplacer_pion("C3","B3");
+
+
+    assertTrue(jeu.get_case_coord("B3").get_color() === couleurB3 && jeu.get_case_coord("B3").get_color() === couleurB3 && jeu.get_case_coord("C3").get_taille_pile() === tailleC3 && jeu.get_case_coord("C3").get_taille_pile() === tailleC3);
+};
