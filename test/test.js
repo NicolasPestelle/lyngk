@@ -195,7 +195,7 @@ LyngkTestCase.prototype.testHistoireVingtDeux = function () {
     assertTrue(jeu.get_case_coord("H6").get_color() === couleurH6 && jeu.get_case_coord("G6").get_color() === couleurG6 && jeu.get_case_coord("H6").get_taille_pile() === tailleH6 && jeu.get_case_coord("G6").get_taille_pile() === tailleG6);
 };
 
-LyngkTestCase.prototype.testHistoireVingtTrois = function () {
+/*LyngkTestCase.prototype.testHistoireVingtTrois = function () {
     var jeu = new Lyngk.Engine();
 
 
@@ -219,5 +219,17 @@ LyngkTestCase.prototype.testHistoireVingtTrois = function () {
 
 
     assertTrue(couleurD3 === Lyngk.Color.BLUE && couleurD6 === Lyngk.Color.RED && tailleD3 === 3 && tailleD6 === 2);
+
+};*/
+
+LyngkTestCase.prototype.testHistoireVingtQuatre = function () {
+
+    var jeu = new Lyngk.Engine();
+
+    var j1 = new Joueur();
+
+    var j2 = new Joueur();
+
+    assertTrue(jeu.tourJoueur() == j1);
 
 };
