@@ -69,7 +69,7 @@ Lyngk.Engine = function () {
 
     };
 
-    this.get_case_coord = function(c) // Refondre avec le hashcode (hashcode = indice tab) refaire le hashcode
+    this.get_case_coord = function(c) // Refaire avec le hashcode (hashcode = indice tab) refaire le hashcode ??
     {
         for(var i in plateau)
         {
@@ -80,11 +80,20 @@ Lyngk.Engine = function () {
 
     this.deplacer_pion = function(src, dest)
     {
-        var source = this.get_case_coord(src); //plateau[i]
-        var destination = this.get_case_coord(dest); // plateau[j]
-        var tmp =source.get_pile(source.get_taille_pile()-1);
-        source.pop_pile();
-        destination.placerPion(tmp);
+
+        var source = this.get_case_coord(src);
+
+        var destination = this.get_case_coord(dest);
+
+        var tmp = source.get_full_pile();
+
+        for (var i in tmp){
+            destination.placerPion(tmp[i]);
+        }
+
+        while (source.get_taille_pile() != 0) {
+            source.pop_pile();
+         }
 
 
     };

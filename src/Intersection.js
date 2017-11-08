@@ -18,6 +18,9 @@ Lyngk.Intersection = function (coord) {
 
     };
 
+    this.get_full_pile = function(){
+        return private_pile;
+    }
 
     this.get_pile= function(i)
     {
