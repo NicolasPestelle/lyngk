@@ -120,7 +120,7 @@ Lyngk.Engine = function () {
 
         var tmp = source.get_full_pile();
 
-        if (destination.get_taille_pile() != 0 && this.est_adjacent(src,dest) === true) {
+        if (destination.get_taille_pile() != 0 && this.est_adjacent(src,dest) === true && source.get_taille_pile()+destination.get_taille_pile() <= 5) {
 
             for (var i in tmp) {
                 destination.placerPion(tmp[i]);
