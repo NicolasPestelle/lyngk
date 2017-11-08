@@ -253,3 +253,17 @@ LyngkTestCase.prototype.testHistoireVingtSix = function () {
     assertTrue(jeu.getReclameCouleur(1) === Lyngk.Color.RED && jeu.tourJoueur() === 2 && jeu.getReclameCouleur(2) != Lyngk.Color.RED);
 
 };
+
+LyngkTestCase.prototype.testHistoireVingtSept = function(){
+        var jeu = new Lyngk.Engine();
+        jeu.get_case_coord("A3").set_couleur(Lyngk.Color.BLUE);
+        jeu.reclamer(1,Lyngk.Color.BLUE);
+        jeu.jouer_coup("A3","B3");
+        jeu.jouer_coup("H6","G5");
+        jeu.jouer_coup("B3","C3");
+        jeu.jouer_coup("G5","G6");
+        jeu.jouer_coup("C3","C2");
+        jeu.jouer_coup("G6","H7");
+        jeu.jouer_coup("C2","D2");
+        assertTrue(jeu.ScoreJ1 === 1 && jeu.get_case_coord("D2").get_etat() === Lyngk.State.VACANT);
+};

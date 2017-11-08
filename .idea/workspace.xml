@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f506860d-029c-4c7b-b0ed-d6abeea88d1b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Engine.js" afterPath="$PROJECT_DIR$/src/Engine.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test.js" afterPath="$PROJECT_DIR$/test/test.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -51,8 +50,8 @@
       <file leaf-file-name="test.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="252" column="115" lean-forward="false" selection-start-line="252" selection-start-column="115" selection-end-line="252" selection-end-column="115" />
+            <state relative-caret-position="394">
+              <caret line="266" column="23" lean-forward="false" selection-start-line="266" selection-start-column="23" selection-end-line="266" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -343,23 +342,11 @@
       <workItem from="1509530595997" duration="272000" />
       <workItem from="1509530949446" duration="3986000" />
       <workItem from="1510131484572" duration="1863000" />
-      <workItem from="1510133438079" duration="15895000" />
+      <workItem from="1510133438079" duration="17006000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Tests - 2017.11.08 at 16h 28m 57s.xml">
-      <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
-    </history-entry>
-    <history-entry file="Tests - 2017.11.08 at 16h 29m 16s.xml">
-      <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
-    </history-entry>
-    <history-entry file="Tests - 2017.11.08 at 16h 29m 46s.xml">
-      <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
-    </history-entry>
-    <history-entry file="Tests - 2017.11.08 at 16h 29m 55s.xml">
-      <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
-    </history-entry>
     <history-entry file="Tests - 2017.11.08 at 16h 30m 16s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
@@ -378,9 +365,21 @@
     <history-entry file="Tests - 2017.11.08 at 16h 32m 54s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
+    <history-entry file="Tests - 2017.11.08 at 16h 51m 45s.xml">
+      <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
+    </history-entry>
+    <history-entry file="Tests - 2017.11.08 at 16h 52m 06s.xml">
+      <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
+    </history-entry>
+    <history-entry file="Tests - 2017.11.08 at 16h 52m 19s.xml">
+      <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
+    </history-entry>
+    <history-entry file="Tests - 2017.11.08 at 16h 52m 59s.xml">
+      <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66814000" />
+    <option name="totallyTimeSpent" value="67925000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="31" width="1922" height="1004" extended-state="6" />
@@ -582,8 +581,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="252" column="115" lean-forward="false" selection-start-line="252" selection-start-column="115" selection-end-line="252" selection-end-column="115" />
+        <state relative-caret-position="394">
+          <caret line="266" column="23" lean-forward="false" selection-start-line="266" selection-start-column="23" selection-end-line="266" selection-end-column="23" />
           <folding />
         </state>
       </provider>
