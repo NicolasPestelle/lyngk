@@ -108,3 +108,12 @@ LyngkTestCase.prototype.testHistoireSeize = function () {
     var couleur = jeu.get_case_coord("B3").get_color();
     assertTrue(jeu.get_case_coord("B3").get_etat() === Lyngk.State.VACANT &&  jeu.get_case_coord("B2").get_color() === couleur && jeu.get_case_coord("B2").get_taille_pile() === 3);
 };
+
+LyngkTestCase.prototype.testHistoireDixSept = function () {
+    var jeu = new Lyngk.Engine();
+    jeu.deplacer_pion("B2","B3");
+    jeu.deplacer_pion("B3","B2");
+    var couleur = jeu.get_case_coord("B3").get_color();
+    var taille = jeu.get_case_coord("B3").get_taille_pile();
+    assertTrue(jeu.get_case_coord("B2").get_etat() === Lyngk.State.VACANT &&  jeu.get_case_coord("B3").get_color() === couleur && jeu.get_case_coord("B3").get_taille_pile() === taille);
+};
