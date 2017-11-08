@@ -239,3 +239,16 @@ LyngkTestCase.prototype.testHistoireVingtCinq = function () {
     assertTrue(jeu.tourJoueur() === 2);
 
 };
+
+LyngkTestCase.prototype.testHistoireVingtSix = function () {
+
+    var jeu = new Lyngk.Engine();
+    jeu.get_case_coord("B3").set_couleur(Lyngk.Color.BLUE)
+
+    jeu.reclamer(1,Lyngk.Color.RED);
+
+    jeu.deplacer_pion("B3","B2");
+
+    assertTrue(jeu.getReclameCouleur() === Lyngk.Color.RED && jeu.tourJoueur() === 2);
+
+};
