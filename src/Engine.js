@@ -112,6 +112,25 @@ Lyngk.Engine = function () {
         }
     };
 
+    this.tailleValide = function(src,dest) {
+
+        var source = this.get_case_coord(src);
+
+        var destination = this.get_case_coord(dest);
+
+        if(source.get_taille_pile() === 1 && destination.get_taille_pile() >1 ){
+            return false;
+        }
+
+
+            if(source.get_taille_pile()+destination.get_taille_pile() <= 5){
+            return true;
+        }else{
+            return false;
+        }
+
+    };
+
     this.deplacer_pion = function(src, dest)
     {
         var source = this.get_case_coord(src);
@@ -120,7 +139,7 @@ Lyngk.Engine = function () {
 
         var tmp = source.get_full_pile();
 
-        if (destination.get_taille_pile() != 0 && this.est_adjacent(src,dest) === true && source.get_taille_pile()+destination.get_taille_pile() <= 5) {
+        if (destination.get_taille_pile() != 0 && this.est_adjacent(src,dest) === true && this.tailleValide(src,dest) === true) {
 
             for (var i in tmp) {
                 destination.placerPion(tmp[i]);
