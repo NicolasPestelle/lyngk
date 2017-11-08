@@ -80,20 +80,23 @@ Lyngk.Engine = function () {
 
     this.deplacer_pion = function(src, dest)
     {
-
         var source = this.get_case_coord(src);
 
         var destination = this.get_case_coord(dest);
 
         var tmp = source.get_full_pile();
 
-        for (var i in tmp){
-            destination.placerPion(tmp[i]);
-        }
+        if (destination.get_taille_pile() != 0) {
 
-        while (source.get_taille_pile() != 0) {
-            source.pop_pile();
-         }
+            for (var i in tmp) {
+                destination.placerPion(tmp[i]);
+            }
+
+            while (source.get_taille_pile() != 0) {
+                source.pop_pile();
+            }
+
+        }
 
 
     };
