@@ -20,6 +20,10 @@ Lyngk.Intersection = function (coord) {
 
     this.get_full_pile = function(){
         return private_pile;
+    };
+
+    this.set_couleur = function (couleur) {
+        private_color = couleur;
     }
 
     this.get_pile= function(i)
