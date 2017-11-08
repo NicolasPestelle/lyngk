@@ -2,6 +2,7 @@
 
 // enums definition
 Lyngk.Color = {BLACK: 0, IVORY: 1, BLUE: 2, RED: 3, GREEN: 4, WHITE: 5};
+Lyngk.Joueur = {Joueur1 : 1, Joueur2 : 2};
 
 
 Lyngk.Engine = function () {
@@ -166,6 +167,11 @@ Lyngk.Engine = function () {
 
     };*/
 
+   this.jouer_coup = function (src,dest) {
+       this.deplacer_pion(src,dest);
+       tour ++;
+   }
+
     this.deplacer_pion = function(src, dest)
     {
         var source = this.get_case_coord(src);
@@ -197,11 +203,5 @@ Lyngk.Engine = function () {
     initPlateau();
     remplirPlateau();
 
-
-    Lyngk.Joueur = function (num) {
-        var private_num = num;
-
-
-    };
 
 };

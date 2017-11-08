@@ -226,10 +226,6 @@ LyngkTestCase.prototype.testHistoireVingtQuatre = function () {
 
     var jeu = new Lyngk.Engine();
 
-    var j1 = new Lyngk.Joueur(1);
-
-    var j2 = new Lyngk.Joueur(2);
-
     assertTrue(jeu.tourJoueur() === 1);
 
 };
@@ -238,11 +234,7 @@ LyngkTestCase.prototype.testHistoireVingtCinq = function () {
 
     var jeu = new Lyngk.Engine();
 
-    var j1 = new Lyngk.Joueur(1);
-
-    var j2 = new Lyngk.Joueur(2);
-
-    j1.jouer_coup("B2","B3");
+    jeu.jouer_coup("B2","B3");
 
     assertTrue(jeu.tourJoueur() === 2);
 
