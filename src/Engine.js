@@ -3,11 +3,13 @@
 // enums definition
 Lyngk.Color = {BLACK: 0, IVORY: 1, BLUE: 2, RED: 3, GREEN: 4, WHITE: 5};
 
+
 Lyngk.Engine = function () {
 
 
     var plateau = [];
     var tabCoordValid = [];
+    var tour = 1;
 
     var good_coord = function () {
 
@@ -79,6 +81,15 @@ Lyngk.Engine = function () {
         }
     };
 
+
+    this.tourJoueur = function () {
+        var i = 0;
+        if (tour % 2 == 0) {
+            return 2;
+        } else {
+            return 1;
+        }
+    };
 
     this.est_adjacent = function (src, dest) {
 
@@ -185,5 +196,12 @@ Lyngk.Engine = function () {
     good_coord();
     initPlateau();
     remplirPlateau();
+
+
+    Lyngk.Joueur = function (num) {
+        var private_num = num;
+
+
+    };
 
 };

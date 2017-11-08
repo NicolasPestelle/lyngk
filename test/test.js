@@ -226,10 +226,10 @@ LyngkTestCase.prototype.testHistoireVingtQuatre = function () {
 
     var jeu = new Lyngk.Engine();
 
-    var j1 = new Joueur();
+    var j1 = new Lyngk.Joueur(1);
 
-    var j2 = new Joueur();
+    var j2 = new Lyngk.Joueur(2);
 
-    assertTrue(jeu.tourJoueur() == j1);
+    assertTrue(jeu.tourJoueur() === 1);
 
 };
