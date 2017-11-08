@@ -51,8 +51,8 @@
       <file leaf-file-name="test.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="243" column="0" lean-forward="true" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
+            <state relative-caret-position="425">
+              <caret line="252" column="115" lean-forward="false" selection-start-line="252" selection-start-column="115" selection-end-line="252" selection-end-column="115" />
               <folding />
             </state>
           </provider>
@@ -61,8 +61,8 @@
       <file leaf-file-name="Engine.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Engine.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2295">
-              <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+            <state relative-caret-position="153">
+              <caret line="200" column="17" lean-forward="false" selection-start-line="200" selection-start-column="17" selection-end-line="200" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -71,7 +71,7 @@
       <file leaf-file-name="Coordinates.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Coordinates.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
+            <state relative-caret-position="-187">
               <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
               <folding />
             </state>
@@ -343,44 +343,44 @@
       <workItem from="1509530595997" duration="272000" />
       <workItem from="1509530949446" duration="3986000" />
       <workItem from="1510131484572" duration="1863000" />
-      <workItem from="1510133438079" duration="15103000" />
+      <workItem from="1510133438079" duration="15895000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Tests - 2017.11.08 at 15h 59m 56s.xml">
+    <history-entry file="Tests - 2017.11.08 at 16h 28m 57s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.08 at 16h 02m 45s.xml">
+    <history-entry file="Tests - 2017.11.08 at 16h 29m 16s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.08 at 16h 03m 08s.xml">
+    <history-entry file="Tests - 2017.11.08 at 16h 29m 46s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.08 at 16h 03m 36s.xml">
+    <history-entry file="Tests - 2017.11.08 at 16h 29m 55s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.08 at 16h 04m 04s.xml">
+    <history-entry file="Tests - 2017.11.08 at 16h 30m 16s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.08 at 16h 05m 30s.xml">
+    <history-entry file="Tests - 2017.11.08 at 16h 31m 20s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.08 at 16h 06m 57s.xml">
+    <history-entry file="Tests - 2017.11.08 at 16h 31m 26s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.08 at 16h 15m 58s.xml">
+    <history-entry file="Tests - 2017.11.08 at 16h 32m 27s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.08 at 16h 16m 40s.xml">
+    <history-entry file="Tests - 2017.11.08 at 16h 32m 47s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.08 at 16h 19m 13s.xml">
+    <history-entry file="Tests - 2017.11.08 at 16h 32m 54s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66022000" />
+    <option name="totallyTimeSpent" value="66814000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="31" width="1922" height="1004" extended-state="6" />
@@ -548,14 +548,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Coordinates.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Joueur.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -572,18 +564,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Coordinates.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-187">
+          <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2295">
-          <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        <state relative-caret-position="153">
+          <caret line="200" column="17" lean-forward="false" selection-start-line="200" selection-start-column="17" selection-end-line="200" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="243" column="0" lean-forward="true" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
+        <state relative-caret-position="425">
+          <caret line="252" column="115" lean-forward="false" selection-start-line="252" selection-start-column="115" selection-end-line="252" selection-end-column="115" />
           <folding />
         </state>
       </provider>

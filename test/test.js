@@ -246,9 +246,10 @@ LyngkTestCase.prototype.testHistoireVingtSix = function () {
     jeu.get_case_coord("B3").set_couleur(Lyngk.Color.BLUE)
 
     jeu.reclamer(1,Lyngk.Color.RED);
+    jeu.reclamer(2,Lyngk.Color.RED);
 
-    jeu.deplacer_pion("B3","B2");
+    jeu.jouer_coup("B3","B2");
 
-    assertTrue(jeu.getReclameCouleur() === Lyngk.Color.RED && jeu.tourJoueur() === 2);
+    assertTrue(jeu.getReclameCouleur(1) === Lyngk.Color.RED && jeu.tourJoueur() === 2 && jeu.getReclameCouleur(2) != Lyngk.Color.RED);
 
 };

@@ -173,7 +173,37 @@ Lyngk.Engine = function () {
    this.jouer_coup = function (src,dest) {
        this.deplacer_pion(src,dest);
        tour ++;
-   }
+   };
+
+   this.reclamer = function (joueur,couleur) {
+       for(var i in couleurJ1) {
+           if (couleurJ1[i] == couleur){
+               return false;
+           }
+       }
+
+       for(var j in couleurJ2){
+           if (couleurJ2 == couleur){
+               return false;
+           }
+       }
+
+       if (joueur == Lyngk.Joueur.Joueur1){
+           couleurJ1.push(couleur);
+       }
+       else{
+           couleurJ2.push(couleur);
+       }
+
+   };
+
+   this.getReclameCouleur = function(joueur){
+      if(joueur == Lyngk.Joueur.Joueur1){
+          return couleurJ1[0];
+      } else{
+          return couleurJ2[0];
+      }
+    };
 
     this.deplacer_pion = function(src, dest)
     {
