@@ -14,12 +14,16 @@ Lyngk.Engine = function () {
     var couleurJ1 = [];
     var couleurJ2 = [];
 
+    function coord(fromCharCode, coordValid) {
+        return new Lyngk.Coordinates(fromCharCode, coordValid[1]);
+    }
+
     function goodCoordCondition(i) {
         var fromCharCode = String.fromCharCode(parseInt(i) + 65);
         var coordValid = Lyngk.coordValides[i];
         if (coordValid[1] === coordValid[0]) {
 
-            var coordinates = new Lyngk.Coordinates(fromCharCode, coordValid[1]);
+            var coordinates = coord(fromCharCode, coordValid);
             tabCoordValid.push(coordinates);
         } else {
             var tmp = coordValid[0];
