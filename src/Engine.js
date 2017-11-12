@@ -14,24 +14,32 @@ Lyngk.Engine = function () {
     var couleurJ1 = [];
     var couleurJ2 = [];
 
-    var goodCoord = function () {
+    function goodCoordCondition(i) {
+        var fromCharCode = String.fromCharCode(parseInt(i) + 65);
+        var coordValid = Lyngk.coordValides[i];
+        if (coordValid[1] === coordValid[0]) {
 
-        for (var i in Lyngk.coordValides) {
-            if (Lyngk.coordValides[i][1] === Lyngk.coordValides[i][0]) {
+            var coordinates = new Lyngk.Coordinates(fromCharCode, coordValid[1]);
+            tabCoordValid.push(coordinates);
+        } else {
+            var tmp = coordValid[0];
 
-                tabCoordValid.push(new Lyngk.Coordinates(String.fromCharCode(parseInt(i) + 65), Lyngk.coordValides[i][1]));
-            } else {
-                var tmp = Lyngk.coordValides[i][0];
-
-                while (tmp <= Lyngk.coordValides[i][1]) {
-                    tabCoordValid.push(new Lyngk.Coordinates(String.fromCharCode(parseInt(i) + 65), tmp));
-                    tmp++;
-                }
-
+            while (tmp <= coordValid[1]) {
+                tabCoordValid.push(new Lyngk.Coordinates(fromCharCode, tmp));
+                tmp++;
             }
 
         }
+        return tmp;
+    }
 
+    var goodCoord = function () {
+        var tmp;
+        var index;
+        for ( index in Lyngk.coordValides) {
+            tmp = goodCoordCondition(index);
+
+        }
 
     };
 
@@ -41,7 +49,6 @@ Lyngk.Engine = function () {
     };
 
     var initPlateau = function () {
-        var index;
         tabCoordValid.forEach(function (element) {
             plateau.push(new Lyngk.Intersection(element));
 
@@ -75,9 +82,10 @@ Lyngk.Engine = function () {
 
 
     this.getCaseCoord = function (c) {
-        for (var i in plateau) {
-            if (plateau[i].getCoord().toString() === c) {
-                return plateau[i];
+        var index;
+        for ( index in plateau) {
+            if (plateau[index].getCoord().toString() === c) {
+                return plateau[index];
             }
         }
     };
