@@ -2,8 +2,7 @@
 
 // enums definition
 Lyngk.Color = {BLACK: 0, IVORY: 1, BLUE: 2, RED: 3, GREEN: 4, WHITE: 5};
-Lyngk.Joueur = {Joueur1 : 1, Joueur2 : 2};
-
+Lyngk.Joueur = {Joueur1: 1, Joueur2: 2};
 
 
 Lyngk.Engine = function () {
@@ -15,60 +14,59 @@ Lyngk.Engine = function () {
     var couleurJ1 = [];
     var couleurJ2 = [];
 
-    var good_coord = function () {
+    var goodCoord = function () {
 
-        for(var i in Lyngk.CoordValides)
-            if(Lyngk.CoordValides[i][1] === Lyngk.CoordValides[i][0])
-            {
+        for (var i in Lyngk.coordValides) {
+            if (Lyngk.coordValides[i][1] === Lyngk.coordValides[i][0]) {
 
-                tabCoordValid.push(new Lyngk.Coordinates(String.fromCharCode(parseInt(i)+65),Lyngk.CoordValides[i][1]));
-            }
+                tabCoordValid.push(new Lyngk.Coordinates(String.fromCharCode(parseInt(i) + 65), Lyngk.coordValides[i][1]));
+            } else {
+                var tmp = Lyngk.coordValides[i][0];
 
-            else
-            {
-                var tmp = Lyngk.CoordValides[i][0];
-
-                while(tmp <= Lyngk.CoordValides[i][1])
-                {
-                    tabCoordValid.push(new Lyngk.Coordinates(String.fromCharCode(parseInt(i)+65),tmp));
+                while (tmp <= Lyngk.coordValides[i][1]) {
+                    tabCoordValid.push(new Lyngk.Coordinates(String.fromCharCode(parseInt(i) + 65), tmp));
                     tmp++;
                 }
 
             }
-
-
-    };
-
-
-    this.getTaille = function()
-    {
-        return plateau.length;
-    };
-
-    var initPlateau = function () {
-        for(var i in tabCoordValid)
-        {
-            plateau.push(new Lyngk.Intersection(tabCoordValid[i]));
 
         }
 
 
     };
 
-    var remplirPlateau = function()
-    {
-        // for(var i in plateau)
-        //     plateau[i].placerPion(Lyngk.Color.BLACK);
-        var cptCouleur = [8,8,8,8,8,3];
+
+    this.getSize = function () {
+        return plateau.length;
+    };
+
+    var initPlateau = function () {
+        var index;
+        tabCoordValid.forEach(function (element) {
+            plateau.push(new Lyngk.Intersection(element));
+
+        });
+
+
+    };
+
+    function randColor() {
+        return Math.floor(Math.random() * 6);
+    }
+
+    var remplirPlateau = function () {
+        var cptCouleur = [8, 8, 8, 8, 8, 3];
         var couleur;
-        for(var i in plateau)
-        {
-            couleur =  Math.floor(Math.random() * 6);
+        var index;
 
-            while(cptCouleur[couleur] === 0)
-                couleur =  Math.floor(Math.random() * 6);
+        for (index in plateau) {
+            couleur = randColor();
 
-            plateau[i].placerPion(couleur);
+            while (cptCouleur[couleur] === 0) {
+                couleur = randColor();
+            }
+
+            plateau[index].placePiece(couleur);
             cptCouleur[couleur]--;
         }
 
@@ -76,151 +74,126 @@ Lyngk.Engine = function () {
     };
 
 
-    this.get_case_coord = function(c) // Refaire avec le hashcode (hashcode = indice tab) refaire le hashcode ??
-    {
-        for(var i in plateau)
-        {
-            if(plateau[i].get_coord().toString() === c)
+    this.getCaseCoord = function (c) {
+        for (var i in plateau) {
+            if (plateau[i].getCoord().toString() === c) {
                 return plateau[i];
+            }
         }
     };
 
 
     this.tourJoueur = function () {
-        var i = 0;
-        if (tour % 2 == 0) {
+        if (tour % 2 === 0) {
             return 2;
         } else {
             return 1;
         }
     };
 
-    this.est_adjacent = function (src, dest) {
-
-        var source = this.get_case_coord(src);
-
-        var destination = this.get_case_coord(dest);
-
-        var colDest = destination.get_coord().get_c().charCodeAt(0);
-        var colSrc = source.get_coord().get_c().charCodeAt(0);
-
-
-        if (colSrc === colDest){
-            if( destination.get_coord().get_l()+1 === source.get_coord().get_l() ||  destination.get_coord().get_l()-1 === source.get_coord().get_l()){
-                return true;
-            }else {
-                return false;
-            }
+    function adjacentCondition(colSrc, colDest, flag, coordLine, srcLine) {
+        if (colSrc === colDest) {
+            flag = coordLine + 1 === srcLine || coordLine - 1 === srcLine;
         }
-        else if (colDest === colSrc+1 ){
-            if(  destination.get_coord().get_l() === source.get_coord().get_l()+1 || destination.get_coord().get_l() === source.get_coord().get_l()){
-                return true;
-            }else {
-                return false;
-            }
-        }else if(colDest === colSrc-1){
-            if(destination.get_coord().get_l() === source.get_coord().get_l()-1 || destination.get_coord().get_l() === source.get_coord().get_l() ){
-                return true;
-            }else {
-                return false;
-            }
+        if (colSrc + 1 === colDest) {
+            flag = coordLine === srcLine + 1 || coordLine === srcLine;
         }
+        if (colSrc - 1 === colDest) {
+            flag = coordLine === srcLine - 1 || coordLine === srcLine;
+        }
+        return flag;
+    }
+
+    this.isAdjacent = function (src, dest) {
+
+        var source = this.getCaseCoord(src);
+        var destination = this.getCaseCoord(dest);
+        var colDest = destination.getCoord().getColumn().charCodeAt(0);
+        var colSrc = source.getCoord().getColumn().charCodeAt(0);
+        var srcLine = source.getCoord().getLine();
+        var coordLine = destination.getCoord().getLine();
+        var flag;
+
+        flag = adjacentCondition(colSrc, colDest, flag, coordLine, srcLine);
+
+        return flag;
     };
 
-    this.tailleValide = function(src,dest) {
+    this.validSize = function (src, dest) {
 
-        var source = this.get_case_coord(src);
+        var source = this.getCaseCoord(src);
 
-        var destination = this.get_case_coord(dest);
+        var destination = this.getCaseCoord(dest);
 
-        if(source.get_taille_pile() < destination.get_taille_pile()){
+        if (source.getSizePile() < destination.getSizePile()) {
             return false;
         }
 
-
-        if(source.get_taille_pile()+destination.get_taille_pile() <= 5){
+        if (source.getSizePile() + destination.getSizePile() <= 5) {
             return true;
-        }else{
+        } else {
             return false;
         }
 
     };
 
-   /* this.couleur_valide = function (src,dest) {
+    this.play = function (src, dest) {
+        this.movePiece(src, dest);
+        tour++;
+    };
 
-        var compteurCouleur = [0, 0, 0, 0, 0];
-
-        var source = this.get_case_coord(src);
-
-        var destination = this.get_case_coord(dest);
-
-        for (var i in source.get_taille_pile()) {
-            compteurCouleur[this.getCase(i).get_color()]++;
+    function reclaimCondition(joueur, couleur) {
+        if (joueur === Lyngk.Joueur.Joueur1) {
+            couleurJ1.push(couleur);
         }
-
-        for (var j in destination.get_taille_pile()) {
-            compteurCouleur[this.getCase(j).get_color()]++;
+        else {
+            couleurJ2.push(couleur);
         }
+    }
 
-        for (var k in compteurCouleur){
-            if (compteurCouleur[k] > 1 && k != Lyngk.Color.WHITE) {
+    this.reclaim = function (joueur, couleur) {
+        for (var i in couleurJ1) {
+            if (couleurJ1[i] === couleur) {
                 return false;
             }
         }
 
-    };*/
+        for (var j in couleurJ2) {
+            if (couleurJ2[j] === couleur) {
+                return false;
+            }
+        }
 
-   this.jouer_coup = function (src,dest) {
-       this.deplacer_pion(src,dest);
-       tour ++;
-   };
+        reclaimCondition(joueur, couleur);
 
-   this.reclamer = function (joueur,couleur) {
-       for(var i in couleurJ1) {
-           if (couleurJ1[i] == couleur){
-               return false;
-           }
-       }
-
-       for(var j in couleurJ2){
-           if (couleurJ2 == couleur){
-               return false;
-           }
-       }
-
-       if (joueur == Lyngk.Joueur.Joueur1){
-           couleurJ1.push(couleur);
-       }
-       else{
-           couleurJ2.push(couleur);
-       }
-
-   };
-
-   this.getReclameCouleur = function(joueur){
-      if(joueur == Lyngk.Joueur.Joueur1){
-          return couleurJ1[0];
-      } else{
-          return couleurJ2[0];
-      }
     };
 
-    this.deplacer_pion = function(src, dest)
-    {
-        var source = this.get_case_coord(src);
+    this.getColorReclaim = function (joueur) {
+        if (joueur === Lyngk.Joueur.Joueur1) {
+            return couleurJ1[0];
+        } else {
+            return couleurJ2[0];
+        }
+    };
 
-        var destination = this.get_case_coord(dest);
+    this.movePiece = function (src, dest) {
+        var source = this.getCaseCoord(src);
 
-        var tmp = source.get_full_pile();
+        var destination = this.getCaseCoord(dest);
 
-        if (destination.get_taille_pile() != 0 && this.est_adjacent(src,dest) === true && this.tailleValide(src,dest) === true ) { //&& this.couleur_valide(src,dest) === true
+        var tmp = source.getFullPile();
 
-            for (var i in tmp) {
-                destination.placerPion(tmp[i]);
-            }
+        var dstPileSize = destination.getSizePile() !== 0;
+        var adjacent = this.isAdjacent(src, dest) === true;
+        var validSize = this.validSize(src, dest) === true;
+        if (dstPileSize && adjacent && validSize) {
 
-            while (source.get_taille_pile() != 0) {
-                source.pop_pile();
+            tmp.forEach(function (element) {
+                destination.placePiece(element);
+            });
+
+            while (source.getSizePile() !== 0) {
+                source.popPile();
             }
 
         }
@@ -228,11 +201,11 @@ Lyngk.Engine = function () {
 
     };
 
-    this.getCase = function(i) {
+    this.getCase = function (i) {
         return plateau[i];
     };
 
-    good_coord();
+    goodCoord();
     initPlateau();
     remplirPlateau();
 

@@ -1,66 +1,66 @@
 "use strict";
-Lyngk.CoordValides = [[3,3],[2,5],[1,7],[2,7],[2,8],[3,8],[3,9],[5,8],[7,7]];
-
-Lyngk.coordValides = [[3,3],[2,5],[1,7],[2,7],[2,8],[3,8],[3,9],[5,8],[7,7]];
+Lyngk.coordValides = [[3, 3], [2, 5], [1, 7], [2, 7], [2, 8], [3, 8], [3, 9], [5, 8], [7, 7]];
 
 
 Lyngk.Coordinates = function (c, l) {
 
-    var private_c;
-    var private_l;
+    var privateColumn;
+    var privateLine;
 
-    var init = function (c, l) {
-        private_c = c;
-        private_l = l;
+    var init = function (column, line) {
+        privateColumn = column;
+        privateLine = line;
     };
 
     init(c, l);
 
-    this.valide = function()
-    {
-        return (Lyngk.coordValides[c.charCodeAt(0) - 'A'.charCodeAt(0)][0] <= l && l <= Lyngk.coordValides[c.charCodeAt(0) - 'A'.charCodeAt(0)][1]);
+    this.Valid = function () {
+        var coordValid = Lyngk.coordValides[c.charCodeAt(0) - 'A'.charCodeAt(0)];
+        var coordValidColumn = coordValid[0];
+        var coordValidLine = coordValid[1];
+        return (coordValidColumn <= l && l <= coordValidLine);
 
     };
 
-    this.sommeCoord = function()
-    {
+    this.sumCoord = function () {
         var somme = 0;
 
-        for(var i in Lyngk.CoordValides)
-            somme += Lyngk.CoordValides[i][1] - Lyngk.CoordValides[i][0] + 1;
+        Lyngk.coordValides.forEach(function (element) {
+            somme += element[1] - element[0] + 1;
+        });
 
         return somme;
     };
 
-    this.toString = function()
-    {
-        if(this.valide() === false)
+    this.toString = function () {
+        if (this.Valid() === false) {
             return "invalid";
-        else return ""+ c + l;
-
+        } else {
+            return "" + c + l;
+        }
     };
 
-    this.clonage = function()
-    {
+    this.clone = function () {
 
-        return new Lyngk.Coordinates(private_c, private_l);
+        return new Lyngk.Coordinates(privateColumn, privateLine);
     };
 
-    this.comparaison = function(coord) {
+    this.compair = function (coord) {
 
-        return private_c === coord.get_c() && private_l === coord.get_l();
+        var prvtLine = privateLine === coord.getLine();
+        var prvtClmn = privateColumn === coord.getColumn();
+        return prvtClmn && prvtLine;
     };
 
-    this.get_c = function() {
-        return private_c;
+    this.getColumn = function () {
+        return privateColumn;
     };
 
-    this.get_l = function() {
-        return private_l;
+    this.getLine = function () {
+        return privateLine;
     };
 
-    this.hash = function()
-    {
-        return parseInt("" + (private_c.charCodeAt(0) - 64) + private_l);
-    }
+    this.hash = function () {
+        return parseInt("" + (privateColumn.charCodeAt(0) - 64) + privateLine);
+    };
 };

@@ -4,71 +4,78 @@ Lyngk.State = {VACANT: 0, ONE_PIECE: 1, STACK: 2, FULL_STACK: 3};
 
 Lyngk.Intersection = function (coord) {
 
-    var private_etat = Lyngk.State.VACANT;
-    var private_color;
-    var private_nbPions = 0;
-    var private_coord = coord;
-    var private_pile = [];
+    var privateState = Lyngk.State.VACANT;
+    var privateColor;
+    var privateNbPions = 0;
+    var privateCoord = coord;
+    var privatePile = [];
 
-    this.pop_pile = function () {
-        private_pile.pop();
-        private_nbPions--;
-        if(private_nbPions === 0)
-            private_etat = Lyngk.State.VACANT;
+    this.popPile = function () {
+        privatePile.pop();
+        privateNbPions--;
+        if (privateNbPions === 0) {
+            privateState = Lyngk.State.VACANT;
+        }
 
     };
 
-    this.get_full_pile = function(){
-        return private_pile;
+    this.getFullPile = function () {
+        return privatePile;
     };
 
-    this.set_couleur = function (couleur) {
-        private_color = couleur;
+    this.setColor = function (couleur) {
+        privateColor = couleur;
     }
 
-    this.get_pile= function(i)
-    {
-        return private_pile[i];
+    this.getPile = function (i) {
+        return privatePile[i];
     };
 
-    this.get_coord = function()
-    {
-        return private_coord;
+    this.getCoord = function () {
+        return privateCoord;
     };
 
-    this.get_couleur_pile = function()
-    {
-        return private_pile[private_nbPions-1];
+    this.getColorPile = function () {
+        return privatePile[privateNbPions - 1];
     };
 
-    this.get_taille_pile = function()
-    {
-        return private_nbPions;
+    this.getSizePile = function () {
+        return privateNbPions;
     };
 
-    this.get_etat = function()
-    {
-        return private_etat;
+    this.getState = function () {
+        return privateState;
     };
 
-    this.get_color = function()
-    {
-        return private_color;
+    this.getColor = function () {
+        return privateColor;
     };
 
-    this.placerPion = function(couleur)
-    {
-        private_pile.push(couleur);
-        private_color = couleur;
-        private_nbPions ++;
-        if(private_nbPions === 5)
-            private_etat = Lyngk.State.FULL_STACK;
-        else if(private_etat === Lyngk.State.VACANT)
-            private_etat = Lyngk.State.ONE_PIECE;
-        else if(private_etat === Lyngk.State.ONE_PIECE)
-            private_etat = Lyngk.State.STACK;
-
-
+    function OnePieceCOndition() {
+        if (privateState === Lyngk.State.ONE_PIECE) {
+            privateState = Lyngk.State.STACK;
+        }
     }
+
+    function StateCondition() {
+        if (privateNbPions === 5) {
+            privateState = Lyngk.State.FULL_STACK;
+        } else {
+            if (privateState === Lyngk.State.VACANT) {
+                privateState = Lyngk.State.ONE_PIECE;
+            } else {
+                OnePieceCOndition();
+            }
+        }
+    }
+
+    this.placePiece = function (couleur) {
+        privatePile.push(couleur);
+        privateColor = couleur;
+        privateNbPions += 1;
+        StateCondition();
+
+
+    };
 
 };
